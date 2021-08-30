@@ -10,7 +10,7 @@ real, allocatable ::tot_loss_ly1(:), tot_loss_ly2(:), tot_loss_ly3(:) !For mass 
 real :: om, sm, gs, lw, l, PCTWA, rhob, rhod, choice, sds, ds, dds, dv,dvf, tmxc, tmx,dlayer
 real :: sfrs, rsv, md, grho, rd, vs2, y1,drho, vs1, sf, gp, x, ws,ch, taub1, um,sv, ts, tsf, rsf
 real :: pdx, pdy, maxlyrd, st, dy, dm, ddtb, dtb, m, vol, wb, bf, mb
-real :: boulder, cobble, pebble, granule, sand, silt, clay,num_par, m_1, tbs
+real :: boulder, cobble, pebble, granule, sand, silt, clay,num_par, m_1, tbs, t,l1,md1,d,q1,u1,tss
 real, parameter:: rhow=.998, g=9.807, vis=.001
 integer, parameter::ns=3!,k=12
 real :: rhos,d_m_1, d_m_2, d_m_3, start, finish
@@ -18,19 +18,41 @@ integer :: irow, rtm, tinc, so,yn
 real:: n, svol, tot_mass, tot_vol, tot_rhos, maxlyrd_b, tsv_1, tsv_2, tsv_3, rks
 character(len=16):: comid
 logical :: y
+CHARACTER(LEN=100) :: infile
 common /shear/taub
 !real:: h, da,a,lc, q, u, ks1, ks2, ks, logb, taub, dx, dx_1, f
 !filename = "C:\Users\kvenable\Output\GlobalStateFile" + "date" +"time"
-open(unit=10, file="C:\Users\kvenable\Output\GlobalStateFile18NOVd.txt",status="new")
+open(unit=10, file="C:\Users\kvenable\Output\GlobalStateFile05DECb.txt",status="new")
 call cpu_time(start)
 !call date_and_time
-open(unit=15, file="C:\Users\kvenable\Output\XY18NOVd.txt",status="new")
-open(unit=25, file="C:\Users\kvenable\Output\mass18NOVd.txt", status="new")
-open(unit=35, file="C:\Users\kvenable\Output\conc18NOVd.txt", status="new")
-open(unit=45, file="C:\Users\kvenable\Output\mad18NOVd.txt", status="new")
-open(unit=55, file="C:\Users\kvenable\Output\ml18NOVd.txt", status="new")
-open(unit=65, file="C:\Users\kvenable\Output\inputmatrixpass18NOVd.txt", status="new")
-call aa(mydata)
+open(unit=15, file="C:\Users\kvenable\Output\XY04DECb.txt",status="new")
+open(unit=25, file="C:\Users\kvenable\Output\mass04DECb.txt", status="new")
+open(unit=35, file="C:\Users\kvenable\Output\conc04DECb.txt", status="new")
+open(unit=45, file="C:\Users\kvenable\Output\mad04DECb.txt", status="new")
+open(unit=55, file="C:\Users\kvenable\Output\ml04DECb.txt", status="new")
+open(unit=65, file="C:\Users\kvenable\Output\inputmatrixpass04DECb.txt", status="new")
+!call aa(mydata)
+write(*,*) "Enter the name of the data file to read..."
+read(*,*) infile
+write(*,*) "Enter the number of lines in the input data file..."
+read(*,*) nr 
+! Allocate the memory required in variable mydata
+ALLOCATE(mydata(7,nr))
+! Open up the file to read
+OPEN(UNIT=1,FILE=infile)
+! Now read the file into variable mydata
+DO k=1,nr
+ read(1,*)t,l1,md1,d,q1,u1,tss 
+ mydata(1:7,k)=(/t,l1,md1,d,q1,u1,tss/)
+ENDDO
+! We are done with the file so now close it out
+CLOSE(1)
+! For fun, let's write back out to standard out
+!DO k=1,nr
+!    write(*,*) mydata(:,k)
+!ENDDO
+write(65,*) mydata(1,1), mydata(7,1)
+!common /shear/taub
 print*, "What is your comid?"!Will turn into an outside read statement from file/API  
 read (5, *) comid   
 !a = q/u
@@ -332,9 +354,10 @@ do j=1,rtm,tinc
         !exit
     !end if 
 end do
-DO k=1,nr
-    write(65,*) mydata(:,k)
-ENDDO
+!DO k=1,nr
+!ENDDO
+write(65,*) mydata(1,50), mydata(7,50)
+
 close(65)    
 close(55) 
 close(45)    

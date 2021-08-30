@@ -8,9 +8,9 @@ integer :: yn
 !to incorporate for hourly depostion patterns scale tsf(g/m^2*s to g/m^2*day by 3600s
 call grainsz(rhos,ds) 
 call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
-sf=sv*rhos*86400
-rsf=rsv*rhos*86400 
-Tsf=(sf-rsf)!*3600
+sf=sv*rhos*86400*1000 !-----> in kg/(m^2*day)
+rsf=rsv*rhos*86400*1000
+Tsf=(sf-rsf)/86400!-----> in kg/(m^2*s)
 print*, "Would you like to enter a settling velocity (m/s), enter any number for yes/(1) for no?" 
             y= .true.
             read(5,*) yn

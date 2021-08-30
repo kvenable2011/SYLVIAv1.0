@@ -1,9 +1,9 @@
 subroutine grainsz (rhos,ds)
 implicit none
-real :: rhos, ds, dds, dm
+real :: rhos, ds, dds, dm, taub, dprob
 real, parameter:: om=1.270, sm=2.650, gs=4.000 !g/cm^3 - Changed to reflect instead of kg/m^3  
 logical:: y
-integer:: yn, choice
+integer:: yn, choice, so
 print*, "Choose your particle type and a density will be entered"
         print*, "1  Organic Matter"
         print*, "2  Siliceous Minerals"
@@ -35,5 +35,9 @@ print*, "Choose your particle type and a density will be entered"
                                     ds=dds
                                         exit
                                     end if 
-                        end do   
+                        end do
+!if (so==3) then
+    !call mec1(taub)
+    !call probofdep(dprob)
+!end if                         
 end subroutine grainsz                            
