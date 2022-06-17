@@ -1,0 +1,132 @@
+{
+  "Root":{
+    "Folders":[],
+    "Name":"+UPS_SYLVIA1.0.1 (target.exe)",
+    "Files":[{
+        "filename":".\\upsbenthic.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upsgetdata.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upsgrainsize.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upslocation.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upspassed1.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upspassed2.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upspassedub.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upsprobofdepo2.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upsreadtest.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtest2.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtest3.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtest3b.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtest4.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtestb1.f08",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtestb3.f08",
+        "enabled":"0"
+      },{
+        "filename":".\\upsreadtestb4.f08",
+        "enabled":"1"
+      },{
+        "filename":".\\upssedcount.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upstsf.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upstsf2.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upstsf3.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upstsf4b.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upstsfb.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\upsvrb.f95",
+        "enabled":"1"
+      }]
+  },
+  "Name":"UPS_SYLVIA1.0.1 (target.exe)",
+  "Options":{
+    "Compiler Options":{
+      "Fortran Flags":"",
+      "Link Flags":"",
+      "C Flags":""
+    },
+    "Architecture":1,
+    "Type":0,
+    "Revision":2,
+    "Windows GUI":0,
+    "File Options":{
+      "Library Directories":["Default Add-On Directory"],
+      "Build Directory":"build",
+      "Module Directory":"modules",
+      "Include Directories":["Default Add-On Include Directory"]
+    },
+    "Target":"target.exe",
+    "Fortran Options":{
+      "Use C Preprocessor":"false",
+      "Runtime Diagnostics":"false",
+      "Floating Point Exception Trap":0,
+      "Cray Pointers":"false",
+      "Enable Coarrays":"false",
+      "Enable OpenMP":"false",
+      "Initialize Variables to Zero":"false",
+      "Default Double for Real":"false"
+    },
+    "Code Generation Options":{
+      "CPU Specific":"false",
+      "Processor":"generic",
+      "Aggressive Loops":"false",
+      "Debugging":"true",
+      "Optimization Mode":0,
+      "Profiling":"false"
+    },
+    "Build Dependencies":1,
+    "Launch Options":{
+      "Working Directory":"",
+      "Launch Using MPI":"false",
+      "Keep Console":"true",
+      "External Console":"false",
+      "Command Line Arguments":"",
+      "Build Before Launch":"true"
+    },
+    "Build Options":{
+      "Auto Management":"true",
+      "Makefile":"Makefile.UPS_SYLVIA1.0.1",
+      "Auto Makefile":"true"
+    },
+    "Linker Options":{
+      "Static Linking Mode":7,
+      "Link MPI Library":"false",
+      "Link LAPACK":0
+    }
+  }
+}
