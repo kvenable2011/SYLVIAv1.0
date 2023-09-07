@@ -1,0 +1,109 @@
+ Start COMID Network   9731348.00    
+ Total length of river network (km)   9858.00000    
+ Total time travel is (inlcuding RID )   2.69262147               1
+ Total displacement in 1 hour is=   118.100517       0.00000000    
+ Total displacement in 1 day withing reach is=   2834.41235       0.00000000    
+ layer depth=  0.524999976    
+ Maximum benthic depth set to   1.14999998    
+ Runtime maximum is set at        1000
+   1.00000000       962.401672       38.0847511      0.524999976       0.00000000       0.00000000    
+   25.2700005       4.49999992E-04   1.00000000       1.26999998    
+   2.00000000       2673.33813       105.790985       1.04999995       0.00000000       0.00000000    
+   25.2700005       7.50000007E-04   2.00000000       1.26999998    
+   3.00000000       50.6028976       39.8448029       1.14999998       0.00000000       0.00000000    
+   25.2700005       2.49999994E-05   3.00000000       1.10680008    
+   25.2700005       2.49999994E-05   3.00000000       1.10680008    
+ Your tot_mass is,=   3686.34253    
+ Your total sed volume,=   1010.84308    
+           4        9335
+ Total time travel is (inlcuding RID )   2.59254742               2
+ Total displacement in 1 hour is=   122.659279       1.00000000    
+ Total displacement in 1 day withing reach is=   2943.82275       1.00000000    
+ Total time travel is (inlcuding RID )  0.770515501               3
+ Total displacement in 1 hour is=   412.710724       2.00000000    
+ Total displacement in 1 day withing reach is=   9905.05762       2.00000000    
+ Total time travel is (inlcuding RID )  0.340064496               4
+ Total displacement in 1 hour is=   935.116760       3.00000000    
+ Total displacement in 1 day withing reach is=   22442.8027       3.00000000    
+ Total time travel is (inlcuding RID )   2.56572819               5
+ Total displacement in 1 hour is=   123.941429       4.00000000    
+ Total displacement in 1 day withing reach is=   2974.59424       4.00000000    
+ Total time travel is (inlcuding RID )   2.49684930               6
+ Total displacement in 1 hour is=   127.360512       5.00000000    
+ Total displacement in 1 day withing reach is=   3056.65234       5.00000000    
+ Total time travel is (inlcuding RID )   2.43157220               7
+ Total displacement in 1 hour is=   130.779572       6.00000000    
+ Total displacement in 1 day withing reach is=   3138.70972       6.00000000    
+ Total time travel is (inlcuding RID )   2.37972641               8
+ Total displacement in 1 hour is=   133.628799       7.00000000    
+ Total displacement in 1 day withing reach is=   3207.09131       7.00000000    
+ Total time travel is (inlcuding RID )   1.06751955               9
+ Total displacement in 1 hour is=   297.886841       8.00000000    
+ Total displacement in 1 day withing reach is=   7149.28418       8.00000000    
+ Total time travel is (inlcuding RID )   2.30835938              10
+ Total displacement in 1 hour is=   137.760193       9.00000000    
+ Total displacement in 1 day withing reach is=   3306.24463       9.00000000    
+ Total time travel is (inlcuding RID )   2.28941870              11
+ Total displacement in 1 hour is=   138.899887       10.0000000    
+ Total displacement in 1 day withing reach is=   3333.59717       10.0000000    
+ Total time travel is (inlcuding RID )   2.28239608              12
+ Total displacement in 1 hour is=   139.327271       11.0000000    
+ Total displacement in 1 day withing reach is=   3343.85449       11.0000000    
+ Total time travel is (inlcuding RID )   2.28473234              13
+ Total displacement in 1 hour is=   139.184799       12.0000000    
+ Total displacement in 1 day withing reach is=   3340.43506       12.0000000    
+ Total time travel is (inlcuding RID )   2.29412484              14
+ Total displacement in 1 hour is=   138.614960       13.0000000    
+ Total displacement in 1 day withing reach is=   3326.75903       13.0000000    
+ Total time travel is (inlcuding RID )  0.958018541              15
+ Total displacement in 1 hour is=   331.935120       14.0000000    
+ Total displacement in 1 day withing reach is=   7966.44287       14.0000000    
+ Total time travel is (inlcuding RID )  0.577388287              16
+ Total displacement in 1 hour is=   550.755859       15.0000000    
+ Total displacement in 1 day withing reach is=   13218.1406       15.0000000    
+ Total time travel is (inlcuding RID )   2.34966683              17
+ Total displacement in 1 hour is=   135.338333       16.0000000    
+ Total displacement in 1 day withing reach is=   3248.12012       16.0000000    
+ Total time travel is (inlcuding RID )   2.36710858              18
+ Total displacement in 1 hour is=   134.341125       17.0000000    
+ Total displacement in 1 day withing reach is=   3224.18701       17.0000000    
+ Total time travel is (inlcuding RID )   2.35462379              19
+ Total displacement in 1 hour is=   135.053421       18.0000000    
+ Total displacement in 1 day withing reach is=   3241.28223       18.0000000    
+ Total time travel is (inlcuding RID )   2.40278077              20
+ Total displacement in 1 hour is=   132.346664       19.0000000    
+ Total displacement in 1 day withing reach is=   3176.31982       19.0000000    
+ Total time travel is (inlcuding RID )  0.409725279              21
+ Total displacement in 1 hour is=   776.129822       20.0000000    
+ Total displacement in 1 day withing reach is=   18627.1152       20.0000000    
+ Total time travel is (inlcuding RID )   1.38301325              22
+ Total displacement in 1 hour is=   229.932724       21.0000000    
+ Total displacement in 1 day withing reach is=   5518.38525       21.0000000    
+ Total time travel is (inlcuding RID )   2.44488859              23
+ Total displacement in 1 hour is=   130.067276       22.0000000    
+ Total displacement in 1 day withing reach is=   3121.61475       22.0000000    
+ Total time travel is (inlcuding RID )   1.63410199              24
+ Total displacement in 1 hour is=   194.602295       23.0000000    
+ Total displacement in 1 day withing reach is=   4670.45508       23.0000000    
+ Total time travel is (inlcuding RID )   2.06301618              25
+ Total displacement in 1 hour is=   154.143250       24.0000000    
+ Total displacement in 1 day withing reach is=   3699.43799       24.0000000    
+ Total time travel is (inlcuding RID )   2.29885006              26
+ Total displacement in 1 hour is=   138.330032       25.0000000    
+ Total displacement in 1 day withing reach is=   3319.92090       25.0000000    
+ Total time travel is (inlcuding RID )   2.02741456              27
+ Total displacement in 1 hour is=   156.850021       26.0000000    
+ Total displacement in 1 day withing reach is=   3764.40039       26.0000000    
+ Total time travel is (inlcuding RID )   2.13198018              28
+ Total displacement in 1 hour is=   149.157104       27.0000000    
+ Total displacement in 1 day withing reach is=   3579.77051       27.0000000    
+ Total time travel is (inlcuding RID )   2.15669894              29
+ Total displacement in 1 hour is=   147.447556       28.0000000    
+ Total displacement in 1 day withing reach is=   3538.74121       28.0000000    
+ Total time travel is (inlcuding RID )   2.13810658              30
+ Total displacement in 1 hour is=   148.729721       29.0000000    
+ Total displacement in 1 day withing reach is=   3569.51318       29.0000000    
+ Total time travel is (inlcuding RID )   2.12994599              31
+ Total displacement in 1 hour is=   149.299561       30.0000000    
+ Total displacement in 1 day withing reach is=   3583.18945       30.0000000    
+ Total run time=   0.00000000     seconds
