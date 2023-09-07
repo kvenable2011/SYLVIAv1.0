@@ -1,0 +1,142 @@
+ What is your comid?
+2020
+ Enter water depth (m), median diameter size (m) and length (m)
+5
+0.000035
+1000
+ Enter your water discharge (m^3/s) and water velocity m/s)
+6.575
+.8
+ Your cross-sectional area is   8.21875000    
+ dx=  0.800000012    
+ dx_1=   69120.0000    
+ layer depth=   2.50000000    
+ total maximum time(x)in sec and total time in hours   1250.00000      0.347222209    
+ enter run time max in x seconds, and time increment - will place back after working properly with units (no scalling yet)
+1250
+1
+   2020.00000       1250.00000      0.800000012       69120.0000    
+ Would you like to choose (1) Descriptive, (2) Van Rijn, or (3) Roberts (erosion) transport
+2
+ Invalid
+ Choose your water segment type for your solid
+ 1  surface water
+ 2  water column
+ 3  surface benthic
+ 4  sub surface benthic
+1
+ Choose your particle type and a density will be entered
+ 1  Organic Matter
+ 2  Siliceous Minerals
+ 3  Garnett Sands
+ 4  Enter density in g/mL
+2
+ Would you like to enter a grain size, 'any number' for yes & '1' for no (defaults @ 0.025 mm)
+1
+ Grain size default is .025 mm
+ Your solids type is a clay
+   0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       1.00000000    
+ drho   1.65200007    
+ sds   6.24999941E-10
+ sv   4.85687964E-02
+  0.128707319    
+ Would you like to enter a resuspension velocity, enter any number for yes/(1) for no?
+1
+ RSV is set at 0.0
+ tsf=   128707.320    
+   1057813.25    
+   1.00000000       1057813.25       4.85687964E-02   2.50000000       128707.320       0.00000000       0.00000000       1057813.25       1057813.25    
+   8.21875000       2.49999994E-05   1.00000000       0.00000000       0.00000000       2.65000010       0.00000000    
+ Sfc Water Segment
+ Choose your water segment type for your solid
+ 1  surface water
+ 2  water column
+ 3  surface benthic
+ 4  sub surface benthic
+2
+ Choose your particle type and a density will be entered
+ 1  Organic Matter
+ 2  Siliceous Minerals
+ 3  Garnett Sands
+ 4  Enter density in g/mL
+3
+ Would you like to enter a grain size, 'any number' for yes & '1' for no (defaults @ 0.025 mm)
+1
+ Grain size default is .025 mm
+ Your solids type is a clay
+   0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       1.00000000    
+ drho   3.00199986    
+ sds   6.24999941E-10
+ sv   8.82587805E-02
+  0.353035122    
+ Would you like to enter a resuspension velocity, enter any number for yes/(1) for no?
+1
+ RSV is set at 0.0
+ tsf=   353035.125    
+   2901507.50    
+   2.00000000       2901507.50       8.82587805E-02   5.00000000       353035.125       0.00000000       0.00000000       2901507.50       2901507.50    
+   8.21875000       2.49999994E-05   2.00000000       0.00000000       0.00000000       4.00000000       0.00000000    
+ Would you like to include an initial solids concentration in the surface benthic layer? Enter any number for Yes and (1) for No
+1
+ Invalid
+ Choose your water segment type for your solid
+ 1  surface water
+ 2  water column
+ 3  surface benthic
+ 4  sub surface benthic
+3
+ Choose your particle type and a density will be entered
+ 1  Organic Matter
+ 2  Siliceous Minerals
+ 3  Garnett Sands
+ 4  Enter density in g/mL
+1
+ Would you like to enter a grain size, 'any number' for yes & '1' for no (defaults @ 0.025 mm)
+1
+ Grain size default is .025 mm
+ Your solids type is a clay
+   0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       1.00000000    
+ drho  0.271999955    
+ sds   6.24999941E-10
+ sv   7.99679756E-03
+   1.01559330E-02
+ Enter liquid water and liquid content of sediment in the reach segment (lw,l)
+1
+10
+   1.14300001    
+   1.24280000    
+   108.731415    
+ Would you like to include change the benthic time step(dtb)? Enter number for yes and 1 for no. (Default is 1 hour)
+1
+ Your benthic time step is 1 hour
+ bf=   1.24279996E-02
+ Would you like to enter a resuspension velocity, enter any number for yes/(1) for no?
+1
+ RSV is set at 0.0
+ tsf=   12428.0000    
+   102142.625    
+   3.00000000       102142.625       9.99999978E-03   0.00000000       12428.0000       0.00000000       0.00000000       102142.625       102142.625    
+   8.21875000       2.49999994E-05   3.00000000       1.24279996E-02   0.00000000       1.24280000       108.731415    
+ Your tot_mass is,=   4061463.50    
+ Your total sed volume,=   37353.1758 
+=========================================
+Concentration linear regression
+linregress(df['Time'][0:51], df['CL1'][0:51])
+Out[44]: LinregressResult(slope=-4.655264615384733e-06, intercept=0.40221035688, rvalue=-0.9999999921362481, pvalue=7.46090277799592e-193, stderr=8.340195535096724e-11)
+
+linregress(df['Time'][0:28], df['CL2'][0:28])
+Out[45]: LinregressResult(slope=-1.2769187192117295e-05, intercept=1.1032347764285715, rvalue=-0.9999999472908927, pvalue=3.077385582837736e-92, stderr=8.130821466778714e-10)
+
+linregress(df['Time'], df['CL3'])
+Out[47]: LinregressResult(slope=0.00017360256784974219, intercept=1.3834006970435861, rvalue=0.2768921640136767, pvalue=1.9511729803502667e-23, stderr=1.7053629813256517e-05)
+
+================================================
+Mass linear regression
+linregress(df['Time'][0:51], df['ML1'][0:51])
+Out[49]: LinregressResult(slope=-12.242889592760323, intercept=1057813.239247059, rvalue=-0.999999978454371, pvalue=3.955132107137169e-182, stderr=0.00036306174115573685)
+
+linregress(df['Time'][0:28], df['ML2'][0:28])
+Out[50]: LinregressResult(slope=-33.58312807881773, intercept=2901507.5, rvalue=-0.9999999680618876, pvalue=4.567605147552226e-95, stderr=0.0016645778158798875)
+
+linregress(df['Time'], df['ML3'])
+Out[51]: LinregressResult(slope=456.5747629547745, intercept=3638343.904990189, rvalue=0.2768921644864157, pvalue=1.9511726318739895e-23, stderr=44.85104726013012)

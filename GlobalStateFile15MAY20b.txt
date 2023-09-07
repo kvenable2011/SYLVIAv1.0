@@ -1,0 +1,21 @@
+ Your cross-sectional area is   13.8888893    
+ Total displacement in 1 sec is=  0.449999988    
+ Total displacement in 1 day withing reach is=   38880.0000    
+ layer depth=   5.00000000    
+ Maximum benthic depth set to   10.1000004    
+ Your initial COMID and time of travel is=   2040.00000       3333.33350      0.449999988       38880.0000    
+   1.00000000       17876.0176       1287.07324       5.00000000       0.00000000       0.00000000    
+   2.00000000       1410.54626       101.559326       10.0000000       0.00000000       0.00000000    
+   3.00000000       615.571472       44.3211441       10.1000004       0.00000000       0.00000000    
+ Enter a resuspension velocity (m/s) 
+ 0.01
+ Enter a resuspension velocity (m/s) 
+ 0.05
+ Enter a resuspension velocity (m/s) 
+ 0.00
+   13.8888893       2.49999994E-05   1.00000000       2.65000010 
+   13.8888893       2.49999994E-05   2.00000000       1.26999998
+   13.8888893       2.49999994E-05   3.00000000       1.23114288    
+ Your tot_mass is,=   19902.1367    
+ Your total sed volume,=   3863.63501    
+ Total run time=  0.390625000     seconds

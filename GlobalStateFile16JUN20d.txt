@@ -1,0 +1,15 @@
+ Your cross-sectional area is   19.2857151    
+ Total displacement in 1 sec is=  0.349999994    
+ Total displacement in 1 day withing reach is=   30240.0000    
+ layer depth=   7.50000000    
+ Maximum benthic depth set to   15.1000004    
+ Your initialXyzHUC03N       and max time of travel and displacement(per day and per sec) is=   7142.85742      0.349999994       30240.0000    
+   1.00000000       67892.4922       3520.35132       7.50000000       0.00000000       0.00000000    
+   19.2857151       2.49999994E-05   1.00000000       4.00000000    
+   2.00000000       1897.41223       98.3843307       15.0000000       0.00000000       0.00000000    
+   19.2857151       2.49999994E-05   2.00000000       1.26999998    
+   3.00000000       843.973755       43.7616005       15.1000004       0.00000000       0.00000000    
+   19.2857151       2.49999994E-05   3.00000000       1.21560001    
+ Your tot_mass is,=   70633.8828    
+ Your total sed volume,=   10890.8789    
+ Total run time=   11.1093750     seconds
