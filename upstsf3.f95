@@ -1,16 +1,18 @@
-subroutine sedflux4(rhos,ds,tsf,freq_count,dprob)!, boulder, cobble, pebble, granule, sand, silt, clay)
+subroutine sedflux4(rhos,ds,tsf,dprob)! freq_count)!, boulder, cobble, pebble, granule, sand, silt, clay)
 implicit none
 real:: tsf, sf, rsf, rsv, rhos, sv, drho, sds,ds, boulder, cobble, pebble, granule, sand, silt, clay
 real :: ks1, ks2, da, h, ks, f, u, tbs, tb, taub, b 
 real:: gp, x, rd, rhos_kg, rd_1, rd_2, sq, dprob
 real, parameter:: rhow_kg= 998, g=9.807, vis=.001
-real ::freq_count(7)
+!real, allocatable :: freq_count(:)
+!real, allocatable :: freq_count(:)
+!real :: freq_count(7)
 logical:: y
 integer :: yn
 real ::taucd1, taucd2, pd, t2, t1
 !real, intent(inout):: dprob
 call grainsz(rhos, ds)
-call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
+!call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
 !tb = taub*1
 rhos_kg= rhos*1000
 gp=g*((rhos_kg/rhow_kg)-1)
