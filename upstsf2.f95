@@ -1,12 +1,13 @@
-subroutine sedflux2 (rhos,ds,tsf,freq_count)!, boulder, cobble, pebble, granule, sand, silt, clay)
+subroutine sedflux2 (rhos,ds,tsf)!,freq_count)!, boulder, cobble, pebble, granule, sand, silt, clay)
 implicit none
 real:: tsf, sf, rsf, rsv, rhos, sv, drho, sds,ds, boulder, cobble, pebble, granule, sand, silt, clay
 real, parameter:: rhow= .998, g=9.8, vis=.001
-real ::freq_count(7)
+!real, allocatable :: freq_count(:)
+!real ::freq_count(7)
 logical:: y
 integer :: yn
 call grainsz(rhos, ds) 
-call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
+!call graintype(freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
 drho=(rhos-rhow)*1000
 print*, "drho", drho
 sds=ds**2

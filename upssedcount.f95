@@ -1,7 +1,8 @@
 subroutine graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
 implicit none
 real :: rhos,choice, ds, dds, dm, boulder, cobble, pebble, granule, sand, silt, clay
-real :: freq_count(7) 
+!real :: freq_count(7) 
+real, allocatable :: freq_count(:)
 boulder= 0
 cobble= 0
 pebble = 0 
@@ -10,6 +11,7 @@ sand = 0
 silt = 0 
 clay = 0 
 !freq_count (:) = 0 
+freq_count=[real:: 7]
 freq_count=(/boulder, cobble, pebble, granule, sand, silt, clay/)
                         
 if (ds>=0.256) then 

@@ -1,13 +1,14 @@
-subroutine sedflux(rhos,ds,tsf,freq_count)
+subroutine sedflux(rhos,ds,tsf)!,freq_count)
 implicit none
 real:: tsf, sf, rsf, rsv, rhos, sv, ds
 real:: boulder, cobble, pebble, granule, sand, silt, clay
-real:: freq_count(7)
+!real, allocatable :: freq_count(:)
+!real:: freq_count(7)
 logical:: y
 integer :: yn
 !to incorporate for hourly depostion patterns scale tsf(g/m^2*s to g/m^2*day by 3600s
 call grainsz(rhos,ds) 
-call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
+!call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
 sf=sv*rhos*86400*1000 !-----> in kg/(m^2*day)
 rsf=rsv*rhos*86400*1000
 Tsf=(sf-rsf)/86400!-----> in kg/(m^2*s)

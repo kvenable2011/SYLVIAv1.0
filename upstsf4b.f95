@@ -1,18 +1,19 @@
-subroutine sedflux5 (rhob,ds,tsf,freq_count,dprob)!, boulder, cobble, pebble, granule, sand, silt, clay)
+subroutine sedflux5 (rhob,ds,tsf,dprob)!freq_count)!, boulder, cobble, pebble, granule, sand, silt, clay)
 implicit none
 real:: tsf, sf, rsf, rsv, rhos, sv, drho, sds,ds, boulder, cobble, pebble, granule, sand, silt, clay
 real :: ks1, ks2, da, h, ks, f, u
 real:: gp, x, rd, rhob_kg, rd_1, rd_2, sq
 real, parameter:: rhow_kg= 998, g=9.807, vis=.001, rhow =.998, db=0.010
 real:: bf, wb, rhob, dtb, ddtb, PCTWA, lw, l , n, vol, rhod,tb,dprob !taub
-real ::freq_count(7)
+!real, allocatable :: freq_count(:)
+!real ::freq_count(7)
 !real,allocatable :: state_var(:)
 logical:: y
 integer :: yn
 real ::taucd1, taucd2, pd, t2, t1
 !real, intent(inout):: taub
 call grainsz(rhos, ds)
-call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
+!call graintype (freq_count,boulder, cobble, pebble, granule, sand, silt, clay)
 !tb = taub*1
 print*, "Enter liquid water and liquid content of sediment in the reach segment (lw,l)" 
 read (5, *) lw,l
