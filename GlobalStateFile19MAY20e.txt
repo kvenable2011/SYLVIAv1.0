@@ -1,0 +1,15 @@
+ Your cross-sectional area is   27.0000000    
+ Total displacement in 1 sec is=  0.250000000    
+ Total displacement in 1 day withing reach is=   21600.0000    
+ layer depth=   5.00000000    
+ Maximum benthic depth set to   10.1000004    
+ Your initial COMID and time of travel is=   2050.00000       6000.00000      0.250000000       21600.0000    
+   1.00000000       34750.9766       1287.07324       5.00000000       0.00000000       0.00000000    
+   27.0000000       2.49999994E-05   1.00000000       2.65000010    
+   2.00000000       2742.10181       101.559326       10.0000000       0.00000000       0.00000000    
+   27.0000000       2.49999994E-05   2.00000000       1.26999998    
+   3.00000000       1208.00159       44.7407990       10.1000004       0.00000000       0.00000000    
+   27.0000000       2.49999994E-05   3.00000000       1.24280000    
+ Your tot_mass is,=   38701.0781    
+ Your total sed volume,=   7496.14160    
+ Total run time= -0.750000000     seconds
