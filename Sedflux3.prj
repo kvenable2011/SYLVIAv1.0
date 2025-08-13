@@ -1,0 +1,117 @@
+{
+  "Root":{
+    "Folders":[],
+    "Name":"+Sediment HMS (target.exe)",
+    "Files":[{
+        "filename":".\\benthic.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\grainsize.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\location.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\passed.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\passed1.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\probofdep.f90",
+        "enabled":"0"
+      },{
+        "filename":".\\sed3layer.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\sedcount.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\SedimentBasic.f90",
+        "enabled":"0"
+      },{
+        "filename":".\\shearstress.f90",
+        "enabled":"0"
+      },{
+        "filename":".\\shearstressupdated.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\tsf.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\tsf2.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\tsfb.f95",
+        "enabled":"1"
+      },{
+        "filename":".\\twolayer.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\twolayertest.f95",
+        "enabled":"0"
+      },{
+        "filename":".\\vjsv1",
+        "enabled":"0"
+      },{
+        "filename":".\\vjsv1.f90",
+        "enabled":"0"
+      },{
+        "filename":".\\vjsv2.f90",
+        "enabled":"0"
+      }]
+  },
+  "Name":"Sediment HMS (target.exe)",
+  "Options":{
+    "Compiler Options":{
+      "Fortran Flags":"",
+      "Link Flags":"",
+      "C Flags":""
+    },
+    "Architecture":1,
+    "Type":0,
+    "Revision":2,
+    "Windows GUI":0,
+    "File Options":{
+      "Library Directories":["Default Add-On Directory"],
+      "Build Directory":"build",
+      "Module Directory":"modules",
+      "Include Directories":["Default Add-On Include Directory"]
+    },
+    "Target":"target.exe",
+    "Fortran Options":{
+      "Use C Preprocessor":"false",
+      "Runtime Diagnostics":"false",
+      "Cray Pointers":"false",
+      "Enable OpenMP":"false",
+      "Enable Coarrays":"false",
+      "Default Double for Real":"false"
+    },
+    "Code Generation Options":{
+      "CPU Specific":"false",
+      "Processor":"generic",
+      "Aggressive Loops":"false",
+      "Debugging":"true",
+      "Optimization Mode":0,
+      "Profiling":"false"
+    },
+    "Build Dependencies":1,
+    "Launch Options":{
+      "Working Directory":"",
+      "Launch Using MPI":"false",
+      "Keep Console":"true",
+      "External Console":"false",
+      "Command Line Arguments":"",
+      "Build Before Launch":"true"
+    },
+    "Build Options":{
+      "Makefile":"Makefile",
+      "Auto Makefile":"true"
+    },
+    "Linker Options":{
+      "Static Linking Mode":7,
+      "Link MPI Library":"false",
+      "Link LAPACK":0
+    }
+  }
+}
