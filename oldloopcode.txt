@@ -1,0 +1,44 @@
+do j=1,rtm,tinc
+    print*, "Time increment is" , j
+    pdx=(u*real(j))
+    
+     allocate(timeout(9,rtm)) 
+    timeout(1,j) = state_var_time_1(1)
+    timeout(2,j) = state_var_time_1(2)
+    timeout(3,j) = state_var_time_1(3)
+    timeout(4,j) = state_var_time_1(4) 
+    timeout(5,j) = state_var_time_1(5)
+    timeout(6,j) = pdx
+    timeout(7,j) = (timeout(4,j)-dlayer)+(timeout(3,j)*real(j))
+    timeout(8,j) = timeout(2,j)-((timeout(2,j)/dx_1)*pdx)
+    timeout(9,j) = (state_var_time_1(2)/(svol*10**6)) - (pdx*(state_var_time_1(2)/(svol*10**6))/dx_1) 
+    allocate(timeout_1(9,rtm)) 
+    timeout_1(1,j) = state_var_time_2(1)
+    timeout_1(2,j) = state_var_time_2(2)
+    timeout_1(3,j) = state_var_time_2(3)
+    timeout_1(4,j) = state_var_time_2(4) 
+    timeout_1(5,j) = state_var_time_2(5)
+    timeout_1(6,j) = pdx
+    timeout_1(7,j) = (timeout_1(4,j)-dlayer)+(timeout(3,j)*real(j))
+    timeout_1(8,j) = timeout_1(2,j)-((timeout_1(2,j)/dx_1)*pdx)
+    timeout_1(9,j) = (timeout_1(2,j)/(svol*10**6)) - (pdx*(timeout_1(2,j)/(svol*10**6))/dx_1) 
+    allocate(benthic_layer_3(9,rtm))
+    !benthic_layer_3(0,j)= 1
+    benthic_layer_3(1,j)= state_var_time_3(1)
+    benthic_layer_3(2,j)= state_var_time_3(2)
+    benthic_layer_3(3,j)= state_var_time_3(3) 
+    benthic_layer_3(4,j)= state_var_time_3(4)
+    benthic_layer_3(5,j)= state_var_time_3(5)
+    benthic_layer_3(6,j)= pdx
+    benthic_layer_3(7,j)= ((maxlyrd_b-0.1)+.01) +(benthic_layer_3(3,j)*real(j)) !For relative depth below the water column 
+    benthic_layer_3(8,j)=benthic_layer_3(2,j)-((benthic_layer_3(2,j)/dx_1)*pdx)
+    !benthic_layer_3(8,j)=state_var_time_3(2)-((state_var_time_3(2)/dx_1)*pdx)
+    benthic_layer_3(9,j)=(benthic_layer_3(2,j)/(svol*10**6)) - (pdx*(benthic_layer_3(2,j)/(svol*10**6))/dx_1) 
+    !benthic_layer_3(10,j)=benthic_layer_3(8,j)/tot_rhos
+    !benthic_layer_3(11,j)=benthic_layer_3(10,j)/a
+    allocate(bottom_out(2,rtm))
+    bottom_out(1,j) = benthic_layer_3(8,j)/tot_rhos
+    bottom_out(2,j) = bottom_out(1,j)/a
+    if (j==1) then
+        write(2,*) "TIME","ML1","ML2","ML3"
+        write(3,*) "TIME", "CL1", "CL2", "CL3"

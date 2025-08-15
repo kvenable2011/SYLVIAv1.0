@@ -1,35 +1,40 @@
 program ups
+use hydro
 implicit none
-real :: state_att(4), freq_count(7), fc(7), int_con(3), cumm_freq(7),state_var(6)
-real :: state_att_1(4,3)
+real :: state_att(6), freq_count(7), fc(7), int_con(4), cumm_freq(7),state_var(6)
+real :: state_att_1(6,3)
 !real, pointer :: rhos1, rhos2, rhos3
 real, allocatable ::timeout_1(:,:),timeout(:,:),benthic_layer_3(:,:),state_var_time_1(:), state_var_time_2(:), state_var_time_3(:)
 real, allocatable ::mad(:), mad_b(:), mad_1(:), ml_ly1(:), ml_ly2(:), ml_ly3(:)
 real, allocatable ::tot_loss_ly1(:), tot_loss_ly2(:), tot_loss_ly3(:) !For mass adjustment to use within interation
-real :: om, sm, gs, lw, l, PCTWA, rhob, rhod, choice, sds, ds, dds, dv, dprob, dvf, tmxc, tmx,dlayer
-real :: sfrs, rsv, f, ks, md, grho, ks1, ks2, rd, vs2, y1,drho, vs1, sf, gp, x, ws,ch, taub1, um, taub, sv, ts, a, tsf, rsf, lc
-real :: pdx, pdy, maxlyrd, dx, st, dy, dm, ddtb, dtb, m, vol, wb, bf, mb
-real :: boulder, cobble, pebble, granule, sand, silt, clay ,dx_1,num_par, m_1
+real :: om, sm, gs, lw, l, PCTWA, rhob, rhod, choice, sds, ds, dds, dv,dvf, tmxc, tmx,dlayer
+real :: sfrs, rsv, md, grho, rd, vs2, y1,drho, vs1, sf, gp, x, ws,ch, taub1, um,sv, ts, tsf, rsf
+real :: pdx, pdy, maxlyrd, st, dy, dm, ddtb, dtb, m, vol, wb, bf, mb
+real :: boulder, cobble, pebble, granule, sand, silt, clay,num_par, m_1, tbs
 real, parameter:: rhow=.998, g=9.807, vis=.001
-integer, parameter::ns=3,k=12
-real :: rhos, q, d_m_1, d_m_2, d_m_3, start, finish
-integer :: i,j,irow, rtm, tinc, so
-real:: n, h, da,u, svol, tot_mass, tot_vol, tot_rhos, maxlyrd_b, tsv_1, tsv_2, tsv_3
+integer, parameter::ns=3!,k=12
+real :: rhos,d_m_1, d_m_2, d_m_3, start, finish
+integer :: irow, rtm, tinc, so,yn
+real:: n, svol, tot_mass, tot_vol, tot_rhos, maxlyrd_b, tsv_1, tsv_2, tsv_3, rks
 character(len=16):: comid
+logical :: y
+common /shear/taub
+!real:: h, da,a,lc, q, u, ks1, ks2, ks, logb, taub, dx, dx_1, f
 !filename = "C:\Users\kvenable\Output\GlobalStateFile" + "date" +"time"
-open(unit=10, file="C:\Users\kvenable\Output\GlobalStateFile16JUN20d.txt",status="new")
+open(unit=10, file="C:\Users\kvenable\Output\GlobalStateFile18NOVd.txt",status="new")
 call cpu_time(start)
-!call date_and_time(
-open(unit=15, file="C:\Users\kvenable\Output\XY16JUN20d.txt",status="new")
-open(unit=25, file="C:\Users\kvenable\Output\mass16JUN20d.txt", status="new")
-open(unit=35, file="C:\Users\kvenable\Output\conc16JUN20d.txt", status="new")
-open(unit=45, file="C:\Users\kvenable\Output\mad16JUN20d.txt", status="new")
-open(unit=55, file="C:\Users\kvenable\Output\ml16JUN20d.txt", status="new")
-
+!call date_and_time
+open(unit=15, file="C:\Users\kvenable\Output\XY18NOVd.txt",status="new")
+open(unit=25, file="C:\Users\kvenable\Output\mass18NOVd.txt", status="new")
+open(unit=35, file="C:\Users\kvenable\Output\conc18NOVd.txt", status="new")
+open(unit=45, file="C:\Users\kvenable\Output\mad18NOVd.txt", status="new")
+open(unit=55, file="C:\Users\kvenable\Output\ml18NOVd.txt", status="new")
+open(unit=65, file="C:\Users\kvenable\Output\inputmatrixpass18NOVd.txt", status="new")
+call aa(mydata)
 print*, "What is your comid?"!Will turn into an outside read statement from file/API  
 read (5, *) comid   
 !a = q/u
-call input(h,da,lc,q,u,a,dx,dx_1)
+call input(h,da,lc,q,u,a,dx,dx_1,ks1,ks2,ks,taub)
 dlayer=h/real(ns-1) !can set to (ns-1 for equality in depth of active layers) 
 write(10,*) "layer depth=", dlayer
 maxlyrd_b=h+ 0.1
@@ -37,6 +42,9 @@ write(10,*) "Maximum benthic depth set to", maxlyrd_b
 svol=q/dlayer
 tmx=lc/u
 tmxc= tmx/3600
+!tbs = taub
+!rks = ks
+!print*, tbs, rks
 !Place statement here about recalc of this based on reaching tmx and
 print*, "total maximum time(x)in sec and total time in hours",tmx, tmxc
 print*, "enter run time max in x seconds, and time increment - will place back after working properly with units (no scalling yet)"
@@ -48,9 +56,9 @@ read (5, *) rtm, tinc
 pdx=0
 dy=0
 pdy=0
-int_con(1:3) = (/tmx, dx, dx_1/) 
+int_con(1:4) = (/tmx, dx, dx_1,ks/) 
 write(10,*)"Your initial", comid,  "and max time of travel and displacement(per day and per sec) is=", int_con
-print*, "Would you like to choose (1) Descriptive, (2) Van Rijn, or (3) Roberts (erosion) transport"
+print*, "Would you like to choose (1) Legacy, (2) Descriptive, (3) Van Rijn, or (4) Roberts (erosion) transport"
 read (5,*) so
 if (so==1) then 
 do i=1,ns
@@ -126,7 +134,48 @@ do i=1,ns
     cumm_freq = (fc/ns)*100 !As percentage
     !print*, cumm_freq
 end do
- end if
+else if (so==3) then 
+do i=1,ns
+!fc(:)=0
+!lnumb= i*1 - place statement here for else when i==ns-- down below
+    if (i<ns) then 
+    maxlyrd=dlayer* real(i)
+    call passed2(state_var,i,m_1,maxlyrd,tsf,pdx,pdy,state_att,a,freq_count,taub,dprob)
+       if (i==1) then
+        allocate(state_var_time_1, SOURCE=state_var) 
+        !state_var_time_1=state_var(1:4)
+        state_att_1(1:6,i) =state_att(1:6)
+        fc = freq_count(:)
+        else 
+        allocate(state_var_time_2, SOURCE=state_var) 
+        !state_var_time_2=state_var(1:4)
+        state_att_1(1:6,i) = state_att (1:6)
+        end if 
+        else if( i==ns) then 
+        call passed3 (state_var,i,m_1,maxlyrd_b,tsf,pdx,pdy,state_att,a,freq_count,taub,dprob)
+         !maxlyrd_b=h+ 0.1
+!This is where the new type of memory allocation should begin using MALLOC AND MOVE_ALLOC
+        allocate(state_var_time_3, SOURCE=state_var) 
+        !state_var_time_3=state_var(1:6)
+        state_att_1(1:6,i)=state_att(1:6)!These statements are redundant and can be in on place after the if so. 
+        write(10,*) state_att_1(1:6,i)
+        fc = freq_count(:)
+        tot_mass= state_var_time_1(2)+state_var_time_2(2)+state_var_time_3(2)
+        tot_rhos=state_att_1(4,1)+state_att_1(4,2)+state_att_1(4,3)
+        tot_vol=tot_mass/tot_rhos
+        write(10,*) "Your tot_mass is,=",tot_mass
+        print*, "Your tot_mass is,=",tot_mass
+        write(10,*) "Your total sed volume,=", tot_vol
+        print*, "Your total sed volume,=", tot_vol
+    !cumm_freq(:) = 0 
+    !cumm_freq = (fc/ns)*100 !As percentage
+    end if
+    cumm_freq(:) = 0 
+    cumm_freq = (fc/ns)*100 !As percentage
+    !print*, cumm_freq
+end do
+    end if
+!Time step iteratin begins 
 mad = [real ::] !create an empty array [] for mass adjustment on the fly 
 mad_1 = [real ::]
 mad_b = [real ::]
@@ -283,6 +332,10 @@ do j=1,rtm,tinc
         !exit
     !end if 
 end do
+DO k=1,nr
+    write(65,*) mydata(:,k)
+ENDDO
+close(65)    
 close(55) 
 close(45)    
 close(35)
